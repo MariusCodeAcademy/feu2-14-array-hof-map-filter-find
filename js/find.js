@@ -62,5 +62,14 @@ let foundPost = arrayOfObjects.find((postObj) => {
 console.log('arrayOfObjects ===', arrayOfObjects);
 
 // surasti arrayOfObjects posta kurio autoriaus reiksmeje yra 'Ja'
+const isThereJa = arrayOfObjects.find((pObj) => pObj.author.includes('Ja'));
+console.log('isThereJa ===', isThereJa);
 
 // ta pati panaudojam filter ir paziureti rezultatus
+
+const isThereJaFilter = arrayOfObjects.filter((pObj) => pObj.author.includes('Jam'));
+console.log('isThereJaFilter ===', isThereJaFilter);
+
+console.log(isThereJaFilter[0] === arrayOfObjects[0]);
+
+console.log({ a: 1 } === { a: 1 });
