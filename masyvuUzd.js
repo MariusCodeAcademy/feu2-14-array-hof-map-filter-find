@@ -72,6 +72,15 @@ const people = [
 
 // 8. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyva pakeičiant savybę 'income' į 'salary'
 
+const changedIncomeArr = people.map((pObj) => {
+  // sekli objekto kopija
+  const pObjCopy = { ...pObj };
+  pObjCopy.salary = pObj.income;
+  delete pObjCopy.income;
+  return pObjCopy;
+});
+console.log('changedIncomeArr ===', changedIncomeArr[0]);
+console.log('people ===', people[0]);
 // 9. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyva kuriame nebūtų lyties, vardo ir pavardės
 
 // 10. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyvą kur savybės name ir surname būtų pakeistos viena savybe - fullname
