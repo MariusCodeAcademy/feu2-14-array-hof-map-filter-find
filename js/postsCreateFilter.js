@@ -17,9 +17,26 @@ const postsData = [
     author: 'Jane D.',
     year: 2020,
   },
+  {
+    title: 'HTMLas',
+    author: 'James B.',
+    year: 2022,
+  },
+  {
+    title: 'CSS',
+    author: 'Mike T.',
+    year: 2012,
+  },
+  {
+    title: 'JS',
+    author: 'Jane D.',
+    year: 2020,
+  },
 ];
 // taikomes
 const list1El = document.getElementById('list1');
+const filterBtnEl = document.getElementById('filterBtn');
+const filterInputEl = document.getElementById('filter');
 
 const render = (arrOfPosts) => {
   // issivalyti generuojama konteineri
@@ -46,10 +63,21 @@ const createPostLi = (postObj) => {
 // const crEl = createPostLi(postsData[2]);
 // console.log('crEl ===', crEl);
 // list1El.append(crEl);
-
-// 1. pasiimti reiksme is input
-// 2. su reiksme filtruojam postsData pagal title (.includes)
-// 3. is isfiltruoto masyvo generuojam postus su render()
-// turi vykti funkcijoje kuria iskviesim mygtuko filter paspaudimu
+const filterPosts = () => {
+  // 1. pasiimti reiksme is input
+  let inputValue = filterInputEl.value;
+  // 2. su reiksme filtruojam postsData pagal title (.includes)
+  let filteredData = postsData.filter((pObj) =>
+    pObj.title.toLowerCase().includes(inputValue.toLowerCase())
+  );
+  console.log('filteredData ===', filteredData);
+  // 3. is isfiltruoto masyvo generuojam postus su render()
+  render(filteredData);
+  // turi vykti funkcijoje kuria iskviesim mygtuko filter paspaudimu
+};
 
 render(postsData);
+
+filterBtnEl.addEventListener('click', filterPosts);
+
+filterInputEl.addEventListener('input', filterPosts);
