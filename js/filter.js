@@ -10,7 +10,7 @@ console.log('filter.js');
 // dazniausiai nenaudojamas pakeisti reiksmem
 
 const nums = [1, -5, 2, 10, -4, 3];
-const elements = [1, 'true', 'true', false, null, undefined, 'blue', 50];
+// const elements = [1, 'true', 'true', false, null, undefined, 'blue', 50];
 
 // atrinkti teigiamus
 const positivesArr = nums.filter((sk) => {
@@ -39,10 +39,22 @@ const even = (sk) => sk % 2 === 0;
 console.log('nums.filter(more1less10) ===', nums.filter(more1less10));
 console.log('nums.filter(even) ===', nums.filter(even));
 
-// const elements = [1, 'true', 'true', false, null, undefined, 'blue', 50];
+const elements = [1, 'true', 'green', false, null, undefined, 'blue', 50];
 
 // atrinkti string tipo el
+const stringsArr = elements.filter((el) => typeof el === 'string');
+console.log('stringsArr ===', stringsArr);
 
 // atrinkti number tipo el
 
 // atrinkti viska iskyrus string ir number tipo el
+const notStringNotNumArr = elements.filter(
+  (el) => typeof el !== 'string' && typeof el !== 'number'
+);
+console.log('notStringNotNumArr ===', notStringNotNumArr);
+
+const notStringNotNumArr2 = elements
+  .filter((el) => typeof el !== 'string')
+  .filter((el) => typeof el !== 'number');
+
+console.log('notStringNotNumArr2 ===', notStringNotNumArr2);
