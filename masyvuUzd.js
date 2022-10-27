@@ -75,3 +75,12 @@ const people = [
 // 9. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyva kuriame nebūtų lyties, vardo ir pavardės
 
 // 10. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyvą kur savybės name ir surname būtų pakeistos viena savybe - fullname
+
+let user = {
+  name: 'James',
+  town: 'Vilnius',
+};
+
+user.miestas = user.town;
+delete user.town;
+console.log('user ===', user);
