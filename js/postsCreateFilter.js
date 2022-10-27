@@ -50,5 +50,6 @@ const createPostLi = (postObj) => {
 // 1. pasiimti reiksme is input
 // 2. su reiksme filtruojam postsData pagal title (.includes)
 // 3. is isfiltruoto masyvo generuojam postus su render()
+// turi vykti funkcijoje kuria iskviesim mygtuko filter paspaudimu
 
 render(postsData);
